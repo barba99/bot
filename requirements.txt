@@ -1,5 +1,0 @@
-asyncio
-Pyrogram
-TgCrypto 
-requests
-aiogram
