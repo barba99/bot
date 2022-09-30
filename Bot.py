@@ -70,43 +70,32 @@ async def help(_, m: Message):
     await m.reply_text(
         "/start - **Para comprobar el estado del bot**.\n/iniciar - **Para verificar los comandos del bot**\n/bin Query - **To check Bin\n/chk - **Stripe CHARGE\n")
 @Bot.on_message(filters.command("bin"))
-async def bin(_, m: Message):
-    if len(m.command) < 2:
-        msg = await m.reply_text("**¡Primero aprende qué es bin, hijo de puta!**`")
-        await sleep(15)
-        await msg.delete()
-
-    else:
-
-        mafia = await m.reply_text("espera un momento")
-        inputm = m.text.split(None, 1)[1]
-        bincode = 6
-        ask = inputm[:bincode]
-        req = requests.get(f"https://bin-check-dr4g.herokuapp.com/api/{ask}").json()
-        res = req["result"]
-
-        if res == False:
-            return await mafia.edit("❌ #INVALID_BIN \nTry Again ;)")
-        da = req["data"]
-        bi = da["bin"]
-        ve = da["vendor"]
-        ty = da["type"]
-        le = da["level"]
-        ban = da["bank"]
-        co = da["country"]
-        cc = da["countryInfo"]
-        nm = cc["name"]
-        em = cc["emoji"]
-        cod = cc["code"]
-        dial = cc["dialCode"]
-        
-        mfrom = m.from_user.mention
-        caption = f"""
-╔ Valid ￫ `{res} ✅`\n╚ Bin ￫ `{bi}`\n\n╔ Marca ￫ `{ve}`\n╠ Tipo ￫ `{ty}`\n╚ Nivel ￫ `{le}`\n\n╔ Banco ￫ `{ban} ({co})`\n╠ Pais ￫ `{nm} {em}`\n╠ Alpha2 ￫ `{cod}`\n╚ Codigo de Marcacion ￫ `{dial}`\n\n**↠By ￫** {mfrom}\n**↠ __Bot By ￫*
-"""
-        await mafia.edit(caption)
-
-
+async def binio(message: types.Message
+    await message.answer_chat_action('typing'
+    ID = message.from_user.
+    FIRST = message.from_user.first_name
+    BIN = message.text[len('/bin '):]
+    if len(BIN) < 6:
+        return await message.reply(
+                   'Send bin not ass'
+        )
+    r = requests.get(
+               f'http://binchk-api.vercel.app/bin={BIN}'
+    ).json()
+    INFO = f'''
+BIN⇢ <code>{BIN}</code>
+Marka⇢ <u>{r["brand"]}</u>
+Tip⇢ <u>{r["type"]}</u>
+Seviye⇢ <u>{r["level"]}</u>
+Banka⇢ <u>{r["bank"]}</u>
+Telefon⇢ <u>{r["phone"]}</u>
+Para birimi⇢ <u>{r["currency"]}</u>
+Ülke⇢ <u>{r["country"]}({r["code"]})[{r["flag"]}]</u>
+GÖNDEREN: <a href="tg://user?id={ID}">{FIRST}</a>
+BOT⇢ @{BOT_USERNAME}
+SAHİBİ⇢ <a href="tg://user?id={OWNER}">LINK</a>
+'''
+    await message.reply(INFO
 print("Corrió con éxito")
 
 Bot.run()
