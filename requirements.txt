@@ -3,3 +3,7 @@ Pyrogram
 TgCrypto 
 requests
 aiogram
+youtube_dl
+requests
+logging
+YoutubeSearch
