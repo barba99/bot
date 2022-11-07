@@ -1,12 +1,12 @@
 {
-  "name": "Bin Checker Bot",
+  "name": "bot",
   "description": "Open Source bot to check Bin Valid or Invalid",
   "keywords": [
-    "Bin-Checker-Bot",
+    "bot",
     "Telegram",
     "Bins"
   ],
-  "repository": "https://github.com/Junaid433/HeckerMan-Bot",
+  "repository": "https://github.com/barba99/bot",
   "logo": "https://telegra.ph/logo-05-26",
   
   "env": {
