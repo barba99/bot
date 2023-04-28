@@ -24,7 +24,7 @@ from pyrogram.types import (
 )
 api_id = int (808192)
 api_hash = 'd2a1c1fe0d574f98068c63d4928aee8a'
-bot_token = '5625085207:AAG_qBhyn7GVPkXoffi0iQgHVKSSs1qULcM'
+bot_token = '5625085207:AAE6sgDvBNbyDPvvI69bixP6S3RNUHouY-Q'
 
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 with app:
